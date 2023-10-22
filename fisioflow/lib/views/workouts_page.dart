@@ -8,8 +8,30 @@ class WorkoutsPage extends StatefulWidget {
 }
 
 class _WorkoutsPageState extends State<WorkoutsPage> {
+  final List<String> items =
+      List<String>.generate(100, (index) => 'Item $index');
+
   @override
   Widget build(BuildContext context) {
-    return const Text("Workouts");
+    return Scaffold(
+      body: Column(children: [
+        _handleBody(),
+      ]),
+    );
+  }
+
+  Widget _handleBody() {
+    return Expanded(
+      child: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: ListTile(
+              title: Text(items[index]),
+            ),
+          );
+        },
+      ),
+    );
   }
 }
