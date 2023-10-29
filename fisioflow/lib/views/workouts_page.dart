@@ -1,3 +1,4 @@
+import 'package:fisioflow/widgets/gradientBackground.dart';
 import 'package:flutter/material.dart';
 
 import '../models/exercise.dart';
@@ -37,7 +38,7 @@ class _WorkoutsPageState extends State<WorkoutsPage> {
   }
 
   Widget _handleBody() {
-    return Expanded(child: _handleList());
+    return Expanded(child: GradientBackground(child: _handleList()));
   }
 
   Widget _handleList() {

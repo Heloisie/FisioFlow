@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fisio Flow',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          colorScheme:
+              ColorScheme.fromSeed(seedColor: const Color(0xFF7860DB))),
       home: const MyHomePage(
         title: '',
       ),

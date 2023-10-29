@@ -1,3 +1,4 @@
+import 'package:fisioflow/widgets/gradientBackground.dart';
 import 'package:flutter/material.dart';
 import '../models/exercise.dart';
 import '../models/workout.dart';
@@ -11,13 +12,13 @@ class InitialPage extends StatefulWidget {
 
 class _InitialPageState extends State<InitialPage> {
   final List<Workout> workouts = [
-    Workout('Treino 1', [
+    Workout('Treinos A', [
       Exercise('Flexões', 'assets/flexao.webp',
           'Flexões são um ótimo exercício para fortalecer os músculos do peito, ombros e tríceps.'),
       Exercise('Agachamentos', 'assets/agachamento.jpg',
           'Agachamentos são eficazes para fortalecer as pernas e glúteos.'),
     ]),
-    Workout('Treino 2', [
+    Workout('Treinos AB', [
       Exercise('Prancha', 'assets/prancha.webp',
           'A prancha é um exercício de fortalecimento do núcleo.'),
       Exercise('Abdominal', 'assets/abdominal.webp',
@@ -33,45 +34,25 @@ class _InitialPageState extends State<InitialPage> {
   }
 
   Widget _handleBody(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
+    return GradientBackground(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _handleTitle(),
-          _handleSubTitle(),
-          _handleVerticalWorkoutList()
-        ],
+        children: [_handleVerticalWorkoutList()],
       ),
     );
   }
 
-  Widget _handleTitle() {
-    return const Padding(
-      padding: EdgeInsets.only(left: 8.0, bottom: 8.0),
+  Widget _handleTitle(String workout) {
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
       child: Text(
-        "Treinos",
+        workout,
         textAlign: TextAlign.start,
         style: TextStyle(
-          color: Color.fromARGB(255, 42, 56, 68),
+          color: Colors.black.withOpacity(0.6),
           fontFamily: "Din",
           fontWeight: FontWeight.w900,
-          fontSize: 42,
-        ),
-      ),
-    );
-  }
-
-  Widget _handleSubTitle() {
-    return const Padding(
-      padding: EdgeInsets.only(bottom: 12.0),
-      child: Text(
-        "Escolha um treino e comece a se exercitar",
-        textAlign: TextAlign.start,
-        style: TextStyle(
-          color: Color.fromRGBO(0, 0, 0, 0.612),
-          fontSize: 12,
-          fontFamily: "Din",
+          fontSize: 22,
         ),
       ),
     );
@@ -79,11 +60,27 @@ class _InitialPageState extends State<InitialPage> {
 
   Widget _handleVerticalWorkoutList() {
     return Expanded(
-        child: ListView.builder(
-            itemCount: workouts.length,
-            itemBuilder: (context, index) {
-              return _handleHorizontalWorkoutList(workouts[index]);
-            }));
+        child: Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: ListView.builder(
+          itemCount: workouts.length,
+          itemBuilder: (context, index) {
+            final workout = workouts[index];
+            return Padding(
+              padding: const EdgeInsets.only(top: 12, bottom: 12.0),
+              child: Container(
+                color: Colors.white.withOpacity(0.5),
+                height: 350,
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _handleTitle(workout.name),
+                      _handleHorizontalWorkoutList(workouts[index])
+                    ]),
+              ),
+            );
+          }),
+    ));
   }
 
   Widget _handleHorizontalWorkoutList(Workout workout) {
@@ -98,7 +95,7 @@ class _InitialPageState extends State<InitialPage> {
                 width: 250,
                 height: 200,
                 child: Padding(
-                    padding: const EdgeInsets.only(right: 12.0, bottom: 24.0),
+                    padding: const EdgeInsets.all(12),
                     child: _handleCard(exercise)));
           }),
     );
