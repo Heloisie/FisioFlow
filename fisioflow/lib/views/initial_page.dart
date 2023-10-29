@@ -17,12 +17,30 @@ class _InitialPageState extends State<InitialPage> {
           'Flexões são um ótimo exercício para fortalecer os músculos do peito, ombros e tríceps.'),
       Exercise('Agachamentos', 'assets/agachamento.jpg',
           'Agachamentos são eficazes para fortalecer as pernas e glúteos.'),
-    ]),
-    Workout('Treinos AB', [
       Exercise('Prancha', 'assets/prancha.webp',
           'A prancha é um exercício de fortalecimento do núcleo.'),
       Exercise('Abdominal', 'assets/abdominal.webp',
-          'O abdominal é um exercício para fortalecer os músculos abdominais.'),
+          'O abdominal é um exercício para fortalecer os músculos abdominais.')
+    ]),
+    Workout('Treinos AB', [
+      Exercise('Flexões', 'assets/flexao.webp',
+          'Flexões são um ótimo exercício para fortalecer os músculos do peito, ombros e tríceps.'),
+      Exercise('Agachamentos', 'assets/agachamento.jpg',
+          'Agachamentos são eficazes para fortalecer as pernas e glúteos.'),
+      Exercise('Prancha', 'assets/prancha.webp',
+          'A prancha é um exercício de fortalecimento do núcleo.'),
+      Exercise('Abdominal', 'assets/abdominal.webp',
+          'O abdominal é um exercício para fortalecer os músculos abdominais.')
+    ]),
+    Workout('Treinos ABC', [
+      Exercise('Flexões', 'assets/flexao.webp',
+          'Flexões são um ótimo exercício para fortalecer os músculos do peito, ombros e tríceps.'),
+      Exercise('Agachamentos', 'assets/agachamento.jpg',
+          'Agachamentos são eficazes para fortalecer as pernas e glúteos.'),
+      Exercise('Prancha', 'assets/prancha.webp',
+          'A prancha é um exercício de fortalecimento do núcleo.'),
+      Exercise('Abdominal', 'assets/abdominal.webp',
+          'O abdominal é um exercício para fortalecer os músculos abdominais.')
     ]),
   ];
 
