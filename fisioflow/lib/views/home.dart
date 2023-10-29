@@ -40,15 +40,15 @@ class _MyHomePageState extends State<MyHomePage> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Initial',
+              label: 'Treinos',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.fitness_center),
-              label: 'Workouts',
+              label: 'Exercícios',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
-              label: 'Favorites',
+              label: 'Favoritos',
             ),
           ],
         ));
